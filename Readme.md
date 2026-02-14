@@ -94,7 +94,7 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * **Weaknesses:** This model achieved the **lowest accuracy and highest loss** among the four. Repeated Max Pooling is too aggressive for this dataset. By consistently taking only the maximum value in a window, it discards too much "background" and lower-intensity information. In Arabic script, where a single dot can change a letter's meaning, losing these smaller spatial details leads to higher misclassification rates.
 
 ![Learning Curve Model 1](images/model1_learning_curve.png)
-*Fig. 1: Training history for Model 1. Note the slightly higher validation loss compared to hybrid models.*
+*Fig. 1: Training history for Model 1 of first fold. Note the slightly higher validation loss compared to hybrid models.*
 
 ![Confusion Matrix Model 1](images/model1_confusion_matrix.png)
 *Fig. 2: Confusion Matrix for Model 1.*
@@ -112,7 +112,7 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * **Weaknesses:** Solely using Average Pooling can blur sharp edges and reduce contrast, potentially making it harder to distinguish between characters with very similar shapes but distinct sharp features.
 
 ![Learning Curve Model 2](images/model2_learning_curve.png)
-*Fig. 3: Training history for Model 2.*
+*Fig. 3: Training history for Model 2 of first fold.*
 
 ![Confusion Matrix Model 2](images/model2_confusion_matrix.png)
 *Fig. 4: Confusion Matrix for Model 2.*
@@ -131,7 +131,7 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * **Weaknesses:** Slightly higher loss compared to the optimized version (Model 4), indicating potential for further hyperparameter tuning.
 
 ![Learning Curve Model 2](images/model3_learning_curve.png)
-*Fig. 5: Training and Validation Accuracy/Loss curves for Model 3, showing stable convergence.*
+*Fig. 5: Training and Validation Accuracy/Loss curves for Model 3 of first fold, showing stable convergence.*
 
 ![Confusion Matrix Model 2](images/model3_confusion_matrix.png)
 *Fig. 6: Confusion Matrix for Model 3. Misclassifications are minimal and concentrated around structurally similar characters.*
@@ -150,7 +150,7 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * **Conclusion:** The strategy didn't work out as the accuracy was lower and the loss was higher.
 
 ![Learning Curve Model 4](images/model4_learning_curve.png)
-*Fig. 7: Training history for the Best Model (Model 4), showing the same loss reduction.*
+*Fig. 7: Training history for the Best Model (Model 4) of first fold, showing the same loss reduction.*
 
 ![Confusion Matrix Model 4](images/model4_confusion_matrix.png)
 *Fig. 8: Confusion Matrix for Model 4, displaying the diagonal density.*
