@@ -164,3 +164,8 @@ To train the model, ensure the CSV data files are located in the correct directo
 
 ### Specs
 * Google T4 GPU
+
+### Author
+* Muhammed Korkot
+* LinkedIn: https://www.linkedin.com/in/muhammed-korkot/
+
