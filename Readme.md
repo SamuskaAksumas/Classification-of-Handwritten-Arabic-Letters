@@ -35,6 +35,7 @@ To prepare the raw CSV data for the CNN, a comprehensive preprocessing pipeline 
 3.  **Noise Removal (Morphological Processing):**
     * Utilizing `skimage.measure.label` and `regionprops`.
     * **Action:** The algorithm identifies connected components within the image. Small, isolated clusters of pixels (noise/ink blots) are removed, retaining only the largest connected component (the character).
+    * This didn't work perfectly as the algorithm sometimes skips noise/artifacts. But the noise/artifacts were reduced.
 
 4.  **Aspect-Ratio Preserving Resize:**
     * Standard resizing distorts character shapes.
