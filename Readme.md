@@ -17,7 +17,7 @@ The model is trained and evaluated on the **Arabic Handwritten Character Dataset
 
 The raw data is provided as vectors (length 1024) and is reshaped into `(32, 32, 1)` matrices during the preprocessing stage.
 
-# Related Work
+### Related Work
 This project is based on the related work, which consists of:
 * **Input Layer:** `(32, 32, 1)`
 * **Convolutional Blocks:**
