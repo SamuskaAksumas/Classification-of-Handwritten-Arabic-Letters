@@ -17,6 +17,21 @@ The model is trained and evaluated on the **Arabic Handwritten Character Dataset
 
 The raw data is provided as vectors (length 1024) and is reshaped into `(32, 32, 1)` matrices during the preprocessing stage.
 
+### Related Work
+This project is based on the related work, which consists of:
+* **Input Layer:** `(32, 32, 1)`
+* **Convolutional Blocks:**
+    * Block 1: Conv2D (32 filters) + MaxPool + BatchNorm
+    * Block 2: Conv2D (64 filters) + MaxPool + BatchNorm
+    * Block 3: Conv2D (128 filters) + MaxPool + BatchNorm
+    * Block 4: Conv2D (256 filters) + MaxPool + BatchNorm
+* **Classification Head:**
+    * Flattening
+    * Dense Layers (256, 128, 64, 32 units), each followed by `Dropout(0.2)` and `BatchNormalization`.
+* **Output Layer:** Dense (28 units) with `Softmax` activation.
+* **Accurac:y** 96.01 %
+Please note that this related work does not have a preprocessing pipeline. The raw data is used directly as input for the CNN (after conversion to an appropriate NumPy array).
+
 # Related Work
 This project is based on the related work, which consists of:
 * **Input Layer:** `(32, 32, 1)`
@@ -50,6 +65,7 @@ To prepare the raw CSV data for the CNN, a comprehensive preprocessing pipeline 
 3.  **Noise Removal (Morphological Processing):**
     * Utilizing `skimage.measure.label` and `regionprops`.
     * **Action:** The algorithm identifies connected components within the image. Small, isolated clusters of pixels (noise/ink blots) are removed, retaining only the largest connected component (the character).
+    * This didn't work perfectly as the algorithm sometimes skips noise/artifacts. But the noise/artifacts were reduced.
 
 4.  **Aspect-Ratio Preserving Resize:**
     * Standard resizing distorts character shapes.
@@ -163,8 +179,7 @@ Despite high overall accuracy, misclassifications occur primarily among characte
 * **Ba (ب), Ta (ت), Tha (ث):** Distinguished only by the number and placement of dots.
 
 ![Misclassified Examples](images/misclassified_grid.png)
-*(Placeholder: Insert grid image showing examples of misclassified characters with True vs. Predicted labels)*
-
+*Fig. 9: Misclassified Examples.*
 ---
 
 ## 5. Usage
@@ -179,3 +194,13 @@ To train the model, ensure the CSV data files are located in the correct directo
 
 ### Specs
 * Google T4 GPU
+
+### Author
+* Muhammed Korkot
+* LinkedIn: https://www.linkedin.com/in/muhammed-korkot/
+
+### References
+* A. El-Sawy, M. Loey, and H. EL-Bakry, “Arabic handwritten characters recognition using convolutional neural network,” WSEAS Transactions on Computer Research, vol. 5, pp. 11–19, 2017. 
+       kaggle.com/datasets/mloey1/ahcd1/data
+* M. Altarawneh, "Arabic MNIST CNN with over 96% Accuracy", Kaggle Code Example. 
+       kaggle.com/code/moathaltarawneh/arabic-mnist-cnn-with-over-96-accuracy
