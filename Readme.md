@@ -148,7 +148,7 @@ Despite high overall accuracy, misclassifications occur primarily among characte
 * **Ba (ب), Ta (ت), Tha (ث):** Distinguished only by the number and placement of dots.
 
 ![Misclassified Examples](images/misclassified_grid.png)
-
+*Fig. 9: Misclassified Examples.*
 ---
 
 ## 5. Usage
