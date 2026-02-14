@@ -32,21 +32,6 @@ This project is based on the related work, which consists of:
 * **Accurac:y** 96.01 %
 Please note that this related work does not have a preprocessing pipeline. The raw data is used directly as input for the CNN (after conversion to an appropriate NumPy array).
 
-# Related Work
-This project is based on the related work, which consists of:
-* **Input Layer:** `(32, 32, 1)`
-* **Convolutional Blocks:**
-    * Block 1: Conv2D (32 filters) + MaxPool + BatchNorm
-    * Block 2: Conv2D (64 filters) + MaxPool + BatchNorm
-    * Block 3: Conv2D (128 filters) + MaxPool + BatchNorm
-    * Block 4: Conv2D (256 filters) + MaxPool + BatchNorm
-* **Classification Head:**
-    * Flattening
-    * Dense Layers (256, 128, 64, 32 units), each followed by `Dropout(0.2)` and `BatchNormalization`.
-* **Output Layer:** Dense (28 units) with `Softmax` activation.
-* **Accurac:y** 96.01 %
-Please note that this related work does not have a preprocessing pipeline. The raw data is used directly as input for the CNN (after conversion to an appropriate NumPy array).
-
 ## 3. Methodology & Procedure
 
 The project workflow is divided into three distinct phases: Data Preprocessing, Model Architecture, and Training Strategy.
