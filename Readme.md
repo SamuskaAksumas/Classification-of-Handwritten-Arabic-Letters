@@ -184,3 +184,8 @@ To train the model, ensure the CSV data files are located in the correct directo
 * Muhammed Korkot
 * LinkedIn: https://www.linkedin.com/in/muhammed-korkot/
 
+### References
+* A. El-Sawy, M. Loey, and H. EL-Bakry, “Arabic handwritten characters recognition using convolutional neural network,” WSEAS Transactions on Computer Research, vol. 5, pp. 11–19, 2017. 
+       kaggle.com/datasets/mloey1/ahcd1/data
+* M. Altarawneh, "Arabic MNIST CNN with over 96% Accuracy", Kaggle Code Example. 
+       kaggle.com/code/moathaltarawneh/arabic-mnist-cnn-with-over-96-accuracy
