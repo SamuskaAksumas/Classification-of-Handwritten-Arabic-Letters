@@ -50,7 +50,7 @@ To prepare the raw CSV data for the CNN, a comprehensive preprocessing pipeline 
 3.  **Noise Removal (Morphological Processing):**
     * Utilizing `skimage.measure.label` and `regionprops`.
     * **Action:** The algorithm identifies connected components within the image. Small, isolated clusters of pixels (noise/ink blots) are removed, retaining only the largest connected component (the character).
-    * This didn't work perfectly as the algorithm sometimes skips noise/artifacts. But the noise/artifacts were reduced.
+    * This didn't work perfectly as the algorithm sometimes skips noise/artifacts. But the noise/artifacts were reduced. (UPDATE: This functions has been optimized and now works properly)
 
 4.  **Aspect-Ratio Preserving Resize:**
     * Standard resizing distorts character shapes.
@@ -143,8 +143,8 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * Layer 1-2: `MaxPooling2D`
     * Layers 3-4: `AveragePooling2D`
 * **Performance Metrics:**
-    * **Average Validation Accuracy:** 98.19%
-    * **Average Validation Loss:** 0.0874
+    * **Average Validation Accuracy:** 98.19% (with optimized Noise-Removal-Function: **98.39%** )
+    * **Average Validation Loss:** 0.0874 (with optimized Noise-Removal-Function: **0.0799** )
 * **Analysis:**
     * **Strengths:** This model utilizes the same superior architecture as Model 1 (Hybrid Max/Avg) but has also the second layer as MaxPooling2D. The assumption was to have a clearer and more high valued input for the remaining AvgPooling2D-Layers in order to boost the accuracy even higher.
     * **Conclusion:** The strategy didn't work out as the accuracy was lower and the loss was higher.
