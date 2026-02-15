@@ -124,8 +124,8 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * Layer 1: `MaxPooling2D`
     * Layers 2-4: `AveragePooling2D`
 * **Performance Metrics:**
-    * **Average Validation Accuracy:** 98.27%
-    * **Average Validation Loss:** 0.0872
+    * **Average Validation Accuracy:** 98.27% (with optimized Noise-Removal-Function: **98.39%** )
+    * **Average Validation Loss:** 0.0872 (with optimized Noise-Removal-Function: **0.0799** )
 * **Analysis:**
     * **Strengths:** This model employs a balanced strategy. The initial `MaxPooling` layer is excellent for extracting sharp, dominant features (like the edges of a character). The subsequent `AveragePooling` layers downsample the feature maps by averaging pixel intensities. This prevents the aggressive information loss associated with repeated Max Pooling, ensuring that subtle features (like faint dots or thin connectors) are retained and smoothed rather than discarded.
     * **Weaknesses:** Slightly higher loss compared to the optimized version (Model 4), indicating potential for further hyperparameter tuning.
@@ -143,8 +143,8 @@ The evaluation focuses on how these layers handle the specific characteristics o
     * Layer 1-2: `MaxPooling2D`
     * Layers 3-4: `AveragePooling2D`
 * **Performance Metrics:**
-    * **Average Validation Accuracy:** 98.19% (with optimized Noise-Removal-Function: **98.39%** )
-    * **Average Validation Loss:** 0.0874 (with optimized Noise-Removal-Function: **0.0799** )
+    * **Average Validation Accuracy:** 98.19% 
+    * **Average Validation Loss:** 0.0874 
 * **Analysis:**
     * **Strengths:** This model utilizes the same superior architecture as Model 1 (Hybrid Max/Avg) but has also the second layer as MaxPooling2D. The assumption was to have a clearer and more high valued input for the remaining AvgPooling2D-Layers in order to boost the accuracy even higher.
     * **Conclusion:** The strategy didn't work out as the accuracy was lower and the loss was higher.
